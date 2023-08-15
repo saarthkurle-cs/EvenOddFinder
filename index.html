@@ -1,0 +1,38 @@
+<html>
+<head>
+	<title> Even Odd App </title>
+	<style>
+		*{font-size: 50px; font-family: Impact;}
+		body{background-color: lightyellow;}
+	</style>
+	<script>
+		function check(){
+			event.preventDefault();
+			let num = document.getElementById("num");
+			let ans = document.getElementById("ans");
+
+			if(num.value == ""){
+				alert("You did not enter an integer");
+				ans.innerHTML = "";
+				num.focus();
+				return;
+			}
+			let n = parseInt(num.value);
+			let r = n % 2 == 0 ? "even" : "odd";
+			ans.innerHTML = r;
+		}
+	</script>
+</head>
+
+<body>
+	<center>
+		<h1> Even Odd Finder </h1>
+		<form onsubmit="check()">
+			<input type="number" id="num" placeholder="enter an integer"></input>
+			<br><br>
+			<input type="submit" value="Find Even/Odd"></input>
+		</form>
+		<h1 id="ans"></h1>
+	</center>
+</body>
+</html>
